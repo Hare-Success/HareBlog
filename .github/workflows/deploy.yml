@@ -16,6 +16,7 @@ jobs: # 工作流
     steps:
       - name: Checkout # 步骤1
         uses: actions/checkout@v4 # 使用的动作。格式：userName/repoName。作用：检出仓库，获取源码。 官方actions库：https://github.com/actions
+
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -27,22 +28,22 @@ jobs: # 工作流
           node-version: ${{ matrix.node-version }} # 版本
           cache: 'pnpm'
 
-      - name: Use ssh
-        uses: webfactory/ssh-agent@v0.5.0
-        with:
-          ssh-private-key: ${{ secrets.HARE_TOKEN }}
-
       - name: Install dependencies
         run: pnpm install
 
       - name: Build Docusaurus
         run: pnpm run build
 
+      - name: Use ssh
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.HARE_TOKEN }}
+
       - name: Deploy to GitHub Pages
         env:
           USE_SSH: true
         uses: peaceiris/actions-gh-pages@v3
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN  }}
+          GITHUB_TOKEN: ${{ secrets.HARE_TOKEN }}
           publish_dir: ./build
 
