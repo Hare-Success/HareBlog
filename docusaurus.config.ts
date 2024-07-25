@@ -14,7 +14,6 @@ const config: Config = {
   favicon: 'img/HeadLogo.png',
   organizationName: 'Hare-Success',
   projectName: 'HareBlog',
-  deploymentBranch: 'gh-pages',
   customFields: {
     bio: '道阻且长，行则将至',
     description:
