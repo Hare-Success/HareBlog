@@ -12,12 +12,12 @@ cd /build
 # deploy to github pages
 echo 'note.hare-success.cn' > CNAME
 
-if [ -z "HARE_TOKEN" ]; then
+if [ -z "$HareBlog" ]; then
   msg='deploy'
   githubUrl=git@github.com:Hare-Success/HareBlog.git
 else
   msg='来自github actions的自动部署-------'
-  githubUrl=https://Hare-Success:${HARE_TOKEN}@github.com/Hare-Success/HareBlog.git
+  githubUrl=https://Hare-Success:${HareBlog}@github.com/Hare-Success/HareBlog.git
 fi
 git init
 git add -A
