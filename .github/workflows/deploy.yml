@@ -30,7 +30,7 @@ jobs: # 工作流
       - name: Use ssh
         uses: webfactory/ssh-agent@v0.5.0
         with:
-          ssh-private-key: ${{ secrets.HARE_TOKEN }}
+          ssh-private-key: ${{ secrets.HareBlog }}
 
       - name: Install dependencies
         run: pnpm install
@@ -43,6 +43,6 @@ jobs: # 工作流
           USE_SSH: true
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.HareBlog }}
+          github_token: ${{ secrets.HARE_TOKEN }}
           publish_dir: ./build
 
