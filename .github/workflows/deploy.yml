@@ -42,8 +42,8 @@ jobs: # 工作流
       - name: Deploy to GitHub Pages
         env:
           USE_SSH: true
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          GITHUB_TOKEN: ${{ secrets.HARE_TOKEN }}
-          publish_dir: ./build
+        run: |
+            git config --global user.email "w_16321632@163.com"
+            git config --global user.name "wcg"
+            pnpm run deploy
 
