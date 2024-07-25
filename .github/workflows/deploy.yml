@@ -25,6 +25,12 @@ jobs: # 工作流
         with:
           node-version: ${{ matrix.node-version }} # 版本
           cache: 'pnpm'
+      - name: Set up SSH
+        run: |
+            mkdir -p ~/.ssh
+            echo "${{ secrets.HARE_TOKEN }}" > ~/.ssh/id_rsa
+            chmod 600 ~/.ssh/id_rsa
+            ssh-keyscan -H github.com >> ~/.ssh/known_hosts
       - name: run deploy.sh # 步骤3 （同时部署到github和coding）
         env: # 设置环境变量
           GITHUB_TOKEN: ${{ secrets.HareBlog }} # toKen私密变量
