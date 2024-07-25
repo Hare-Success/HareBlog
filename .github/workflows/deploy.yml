@@ -32,8 +32,15 @@ jobs: # 工作流
             chmod 600 ~/.ssh/id_rsa
             ssh-keyscan -H github.com >> ~/.ssh/known_hosts
 
-      - name: run deploy.sh # 步骤3 （同时部署到github和coding）
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Docusaurus
+        run: npm run build
         env: # 设置环境变量
           GITHUB_TOKEN: ${{ secrets.HareBlog }} # toKen私密变量
           USE_SSH: true
-        run: pnpm install && pnpm run deploy # 执行的命令
+      - name: Deploy to GitHub Pages
+        run: |
+            pnpm install -g gh-pages
+            GH_TOKEN=${{ secrets.HareBlog }} gh-pages -d build
