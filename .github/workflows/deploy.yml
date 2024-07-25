@@ -43,7 +43,5 @@ jobs: # 工作流
         env:
           USE_SSH: true
         run: |
-            git config --global user.email "w_16321632@163.com"
-            git config --global user.name "wcg"
             pnpm run deploy
 

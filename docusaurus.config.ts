@@ -38,11 +38,11 @@ const config: Config = {
       },
 
     ],
-    blog: {
-      sidebar: {
-        groupByYear: true,
-      },
-    },
+    // blog: {
+    //   sidebar: {
+    //     groupByYear: true,
+    //   },
+    // },
     // 文档配置
     docs: {
       sidebar: {
