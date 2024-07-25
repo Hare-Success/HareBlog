@@ -7,6 +7,7 @@ import HeroSvg from './img/hero.svg'
 import SocialLinks from '@site/src/components/SocialLinks'
 import { MovingButton } from '../../magicui/moving-border'
 import styles from './styles.module.css'
+import TypeIt from "typeit-react";
 
 const variants: Variants = {
   visible: i => ({
@@ -63,9 +64,16 @@ export default function Hero() {
       <div className={styles.intro}>
         <Name />
         <motion.p custom={2} initial="hidden" animate="visible" variants={variants} className="max-lg:px-4">
-          <Translate id="homepage.hero.text">
-            在这里我会分享各类技术栈所遇到问题与解决方案，带你了解最新的技术栈以及实际开发中如何应用，并希望我的开发经历对你有所启发。
-          </Translate>
+          {/*<Translate id="homepage.hero.text"></Translate>*/}
+            <TypeIt
+                getBeforeInit={(instance) => {
+                    instance.type("金子发不发光，得等人挖掘！但不成为金子即使裸露在外，也不会看你一眼！")
+                    .pause(750).delete(9).pause(500).type("，也不会看你一眼！")
+                    return instance;
+                    }}
+                // 循环打印
+                options={{ loop: true }}
+            ></TypeIt>
         </motion.p>
         <motion.div custom={3} initial="hidden" animate="visible" variants={variants}>
           <SocialLinks />

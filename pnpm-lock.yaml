@@ -86,6 +86,9 @@ importers:
       tailwindcss:
         specifier: ^3.4.4
         version: 3.4.4
+      typeit-react:
+        specifier: ^2.7.1
+        version: 2.7.1
     devDependencies:
       '@biomejs/biome':
         specifier: 1.8.3
@@ -1577,6 +1580,9 @@ packages:
 
   '@types/unist@3.0.1':
     resolution: {integrity: sha512-ue/hDUpPjC85m+PM9OQDMZr3LywT+CT6mPsQq8OJtCLiERkGRcQUFvu9XASF5XWqyZFXbf15lvb3JFJ4dRLWPg==}
+
+  '@types/web-animations-js@2.2.16':
+    resolution: {integrity: sha512-ATELeWMFwj8eQiH0KmvsCl1V2lu/qx/CjOBmv4ADSZS5u8r4reMyjCXtxG7khqyiwH3IOMNdrON/Ugn94OUcRA==}
 
   '@types/ws@8.5.5':
     resolution: {integrity: sha512-lwhs8hktwxSjf9UaZ9tG5M03PGogvFaH8gUgLNbN9HKIg0dvv6q+gkSuJ8HN4/VbyxkuLzCjlN7GquQ0gUJfIg==}
@@ -5259,6 +5265,12 @@ packages:
   typedarray-to-buffer@3.1.5:
     resolution: {integrity: sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==}
 
+  typeit-react@2.7.1:
+    resolution: {integrity: sha512-40MB1PeED6FOh3yY4ZWhSIppmzqdnwBh7iTOtjgrYntVqs0Bit94w5D+eLqMIWKvRY9NX2+2xSYk6j2QkcTjTQ==}
+
+  typeit@8.8.3:
+    resolution: {integrity: sha512-K7nChkj6iyylUi713VBDULUXXLF0pfB6nFPVhNnXTKO2An7NzVz5fjoAHk2FAC3TFLiSnU+QsqhDmap17oBELw==}
+
   typescript@5.5.2:
     resolution: {integrity: sha512-NcRtPEOsPFFWjobJEtfihkLCZCXZt/os3zf8nTxjVH3RvTSxjrCamJpbExGvYOF+tFHc3pA65qpdwPbzjohhew==}
     engines: {node: '>=14.17'}
@@ -7868,6 +7880,8 @@ snapshots:
   '@types/unist@2.0.8': {}
 
   '@types/unist@3.0.1': {}
+
+  '@types/web-animations-js@2.2.16': {}
 
   '@types/ws@8.5.5':
     dependencies:
@@ -12213,6 +12227,16 @@ snapshots:
   typedarray-to-buffer@3.1.5:
     dependencies:
       is-typedarray: 1.0.0
+
+  typeit-react@2.7.1:
+    dependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+      typeit: 8.8.3
+
+  typeit@8.8.3:
+    dependencies:
+      '@types/web-animations-js': 2.2.16
 
   typescript@5.5.2: {}
 
