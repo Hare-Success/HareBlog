@@ -71,6 +71,11 @@ const config: Config = {
           to: 'project',
         },
         {
+          label: 'Docker',
+          position: 'right',
+          to: 'project',
+        },
+        {
           label: '更多',
           position: 'right',
           items: [
