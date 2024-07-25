@@ -9,7 +9,7 @@ const beian1 = '闽公网安备35021102000847号'
 const defaultLocale = 'en';
 const config: Config = {
   title: 'Hare',
-  url: 'http://note.hare-success.cn',
+  url: 'https://note.hare-success.cn/',
   baseUrl: '/',
   favicon: 'img/HeadLogo.png',
   organizationName: 'Hare-Success',
