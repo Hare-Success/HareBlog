@@ -13,7 +13,7 @@ const config: Config = {
   baseUrl: '/',
   favicon: 'img/HeadLogo.png',
   organizationName: 'Hare-Success',
-  projectName: 'Hare-Success.github.io',
+  projectName: 'HareBlog',
   deploymentBranch: 'gh-pages',
   customFields: {
     bio: '道阻且长，行则将至',
