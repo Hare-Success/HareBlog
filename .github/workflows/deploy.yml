@@ -43,6 +43,6 @@ jobs: # 工作流
           USE_SSH: true
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.HARE_TOKEN }}
+          github_token: ${{ secrets.HareBlog }}
           publish_dir: ./build
 
