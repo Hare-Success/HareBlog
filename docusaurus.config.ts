@@ -223,20 +223,22 @@ const config: Config = {
         blog: {
             path: 'blog',
             showReadingTime:true,
+            readingTime: ({ content, frontMatter, defaultReadingTime }) =>
+              defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
             showLastUpdateAuthor: true,
             showLastUpdateTime: true,
             editUrl: ({locale, blogDirPath, blogPath}) => {
               return `https://github.com/facebook/docusaurus/edit/main/website/${blogDirPath}/${blogPath}`;
             },
-            postsPerPage: 5,
+            postsPerPage: 10,
             feedOptions: {
               type: 'all',
               copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`,
             },
-            blogTitle: 'Docusaurus blog',
+            blogTitle: 'Hare Blog',
             blogDescription: 'Read blog posts about Docusaurus from the team',
             blogSidebarCount: 'ALL',
-            blogSidebarTitle: 'All our posts',
+            blogSidebarTitle: 'Hare的博客',
             onInlineTags: 'throw',
           },
         theme: {
