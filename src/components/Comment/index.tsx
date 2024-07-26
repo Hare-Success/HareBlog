@@ -4,6 +4,10 @@ import { useColorMode, useThemeConfig } from '@docusaurus/theme-common'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import Giscus, { type GiscusProps, type Theme } from '@giscus/react'
 
+/**
+ * 评论相关
+ */
+
 export type GiscusConfig = GiscusProps & { darkTheme: Theme }
 
 const defaultConfig: Partial<GiscusProps> & { darkTheme: string } = {

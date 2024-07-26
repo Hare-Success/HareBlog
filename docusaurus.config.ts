@@ -37,11 +37,7 @@ const config: Config = {
       },
 
     ],
-    // blog: {
-    //   sidebar: {
-    //     groupByYear: true,
-    //   },
-    // },
+
     // 文档配置
     docs: {
       sidebar: {
@@ -72,7 +68,7 @@ const config: Config = {
         {
           label: 'Docker',
           position: 'right',
-          to: 'project',
+          to: 'docs/docker',
         },
         {
           label: '更多',
@@ -188,10 +184,10 @@ const config: Config = {
 
      // 评论
     giscus: {
-      repo: 'kuizuo/blog',
-      repoId: 'MDEwOlJlcG9zaXRvcnkzOTc2MjU2MTI=',
+      repo: 'Hare-Success/HareBlog',
+      repoId: 'R_kgDOMazvYQ',
       category: 'General',
-      categoryId: 'DIC_kwDOF7NJDM4CPK95',
+      categoryId: 'DIC_kwDOMazvYc4ChMAG',
       theme: 'light',
       darkTheme: 'dark_dimmed',
     } satisfies Partial<GiscusConfig>,
@@ -212,7 +208,7 @@ const config: Config = {
         dark: 'rgb(50, 50, 50)',
       },
     },
-  } satisfies Preset.ThemeConfig,
+  },
 
   // 预设
   presets: [

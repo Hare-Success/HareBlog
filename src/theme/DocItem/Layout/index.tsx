@@ -6,6 +6,11 @@ import Comment from '@site/src/components/Comment';
 
 type Props = WrapperProps<typeof LayoutType>;
 
+/**
+ * 文档评论
+ * @param props
+ * @constructor
+ */
 export default function LayoutWrapper(props: Props): JSX.Element {
   return (
     <>
