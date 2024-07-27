@@ -1,8 +1,8 @@
 import Translate, { translate } from '@docusaurus/Translate'
 import { Icon } from '@iconify/react/dist/iconify.js'
-import OpenSourceSvg from '@site/static/svg/undraw_open_source.svg'
-import SpiderSvg from '@site/static/svg/undraw_spider.svg'
-import WebDeveloperSvg from '@site/static/svg/undraw_web_developer.svg'
+import OpenSourceSvg from '@site/static/svg/feture.svg'
+import SpiderSvg from '@site/static/svg/feture1.svg'
+import WebDeveloperSvg from '@site/static/svg/feture2.svg'
 
 export type FeatureItem = {
   title: string | React.ReactNode
@@ -15,11 +15,11 @@ const FEATURES: FeatureItem[] = [
   {
     title: translate({
       id: 'homepage.feature.developer',
-      message: 'TypeScript 全栈工程师',
+      message: '前端小农民',
     }),
     description: (
       <Translate>
-        作为一名 TypeScript 全栈工程师，秉着能用 TS 绝不用 JS 的原则，为项目提供类型安全的保障，提高代码质量和开发效率。
+        相关测试相关测试相关测试相关测试相关测试相关测试相关测试
       </Translate>
     ),
     header: <WebDeveloperSvg className={'h-auto w-full'} height={150} role="img" />,
@@ -28,11 +28,11 @@ const FEATURES: FeatureItem[] = [
   {
     title: translate({
       id: 'homepage.feature.spider',
-      message: '会点逆向 & 爬虫',
+      message: '后端小农民',
     }),
     description: (
       <Translate>
-        作为一名曾学习与实践逆向工程两年半的开发者，对于逆向工程有着浓厚的兴趣，同时造就了超凡的阅读代码能力。没有看不懂的代码，只有不想看的代码。
+        测试测试测试测试测试测试测试测试测试测试测试测试测试测试测试
       </Translate>
     ),
     header: <SpiderSvg className={'h-auto w-full'} height={150} role="img" />,

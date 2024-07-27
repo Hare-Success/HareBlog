@@ -66,21 +66,18 @@ const config: Config = {
           to: 'project',
         },
         {
-          label: 'Docker',
+          type: 'docSidebar',
+          label: 'Docusaurus',
           position: 'right',
-          to: 'docs/docker',
+          sidebarId: 'Docusaurus',
         },
         {
-          label: '更多',
+          type: 'docSidebar',
           position: 'right',
-          items: [
-            //{ label: '归档', to: 'blog/archive' },
-            { label: '笔记', to: 'docs/skill' },
-            { label: '资源', to: 'resources' },
-            //{ label: '友链', to: 'friends' },
-            { label: '工具推荐', to: 'docs/tools' },
-          ],
+          sidebarId: 'ContainersAndMiddleware',
+          label: '容器&中间件',
         },
+
         {
           type: 'localeDropdown',
           position: 'right',
@@ -91,52 +88,52 @@ const config: Config = {
     // 底部配置
     footer: {
       style: 'dark',
-      links: [
-        {
-          title: '学习',
-          items: [
-            { label: '博客', to: 'blog' },
-            //{ label: '归档', to: 'blog/archive' },
-            { label: '技术笔记', to: 'docs/skill' },
-            { label: '实战项目', to: 'project' },
-            { label: '前端示例', to: 'https://example.kuizuo.cn' },
-          ],
-        },
-        {
-          title: '社交媒体',
-          items: [
-            { label: '关于我', to: '/about' },
-            { label: 'GitHub', href: social.github.href },
-            // { label: 'Twitter', href: social.x.href },
-            { label: '掘金', href: social.juejin.href },
-            { label: 'Discord', href: social.discord.href },
-          ],
-        },
-        {
-          title: '网站',
-          items: [
-            { label: 'js反混淆', to: 'https://js-deobfuscator.kuizuo.cn' },
-            { label: 'cyberChef', to: 'https://gchq.github.io/CyberChef' },
-            { label: 'api服务', to: 'https://api.kuizuo.cn' },
-            { label: '便民服务', to: 'https://service.kuizuo.cn' },
-            { label: '站点监控', to: 'https://uptime.kuizuo.cn' },
-          ],
-        },
-        {
-          title: '更多',
-          items: [
-            // { label: '友链', position: 'right', to: 'friends' },
-            { label: '导航', position: 'right', to: 'resources' },
-            {
-              html: `
-                <a href="https://docusaurus.io/zh-CN/" target="_blank" rel="noreferrer noopener">
-                  <img src="/img/buildwith.png" alt="build with docusaurus" width="120" height="50"/>
-                <a/>
-                `,
-            },
-          ],
-        },
-      ],
+      // links: [
+      //   {
+      //     title: '学习',
+      //     items: [
+      //       { label: '博客', to: 'blog' },
+      //       //{ label: '归档', to: 'blog/archive' },
+      //       { label: '技术笔记', to: 'docs/skill' },
+      //       { label: '实战项目', to: 'project' },
+      //       { label: '前端示例', to: 'https://example.kuizuo.cn' },
+      //     ],
+      //   },
+      //   {
+      //     title: '社交媒体',
+      //     items: [
+      //       { label: '关于我', to: '/about' },
+      //       { label: 'GitHub', href: social.github.href },
+      //       // { label: 'Twitter', href: social.x.href },
+      //       { label: '掘金', href: social.juejin.href },
+      //       { label: 'Discord', href: social.discord.href },
+      //     ],
+      //   },
+      //   {
+      //     title: '网站',
+      //     items: [
+      //       { label: 'js反混淆', to: 'https://js-deobfuscator.kuizuo.cn' },
+      //       { label: 'cyberChef', to: 'https://gchq.github.io/CyberChef' },
+      //       { label: 'api服务', to: 'https://api.kuizuo.cn' },
+      //       { label: '便民服务', to: 'https://service.kuizuo.cn' },
+      //       { label: '站点监控', to: 'https://uptime.kuizuo.cn' },
+      //     ],
+      //   },
+      //   {
+      //     title: '更多',
+      //     items: [
+      //       // { label: '友链', position: 'right', to: 'friends' },
+      //       { label: '导航', position: 'right', to: 'resources' },
+      //       {
+      //         html: `
+      //           <a href="https://docusaurus.io/zh-CN/" target="_blank" rel="noreferrer noopener">
+      //             <img src="/img/buildwith.png" alt="build with docusaurus" width="120" height="50"/>
+      //           <a/>
+      //           `,
+      //       },
+      //     ],
+      //   },
+      // ],
       // copyright: `
       //   <p style="margin-bottom: 0;"><a href="http://beian.miit.gov.cn/">${beian}</a></p>
       //   <p style="display: inline-flex; align-items: center;"><img style="height:20px;margin-right: 0.5rem;" src="/img/police.png" alt="police" height="20"/><a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=${
@@ -217,7 +214,7 @@ const config: Config = {
       {
         docs: {
           path: 'docs',
-          sidebarPath: 'sidebars.ts',
+          sidebarPath: './sidebars.ts',
         },
         // Test 纯文档模式:https://docusaurus.io/zh-CN/docs/docs-introduction
         blog: {
@@ -225,7 +222,6 @@ const config: Config = {
             showReadingTime:true,
             readingTime: ({ content, frontMatter, defaultReadingTime }) =>
               defaultReadingTime({ content, options: { wordsPerMinute: 300 } }),
-            showLastUpdateAuthor: true,
             showLastUpdateTime: true,
             editUrl: ({locale, blogDirPath, blogPath}) => {
               return `https://github.com/facebook/docusaurus/edit/main/website/${blogDirPath}/${blogPath}`;
