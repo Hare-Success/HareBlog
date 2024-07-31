@@ -4,19 +4,32 @@ const sidebars: SidebarsConfig = {
   // 容器中间件
   ContainersAndMiddleware: [
     'containersAndMiddleware',
-    // {
-    //   type: 'category',
-    //   label: 'Docker',
-    //   link: {
-    //     type: 'generated-index',
-    //   },
-    //   items: [
-    //     'installation',
-    //     'configuration',
-    //     'playground',
-    //     'typescript-support',
-    //   ],
-    // },
+    {
+      type: 'category',
+      label: 'Docker',
+      link: {
+        type: 'generated-index',
+        description:
+            "关于容器Docker命令相关学习",
+        keywords: ['docker'],
+      },
+      items: [
+        'docker/dockerBottom',
+        'docker/dockerImages'
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Redis',
+      link: {
+        type: 'generated-index',
+        description:
+            "关于中间件Redis命令的相关学习",
+        keywords: ['redis'],
+      },
+      items: [
+        'redis/redisString'],
+    },
   ],
   // docusaurus配置
   Docusaurus: [
