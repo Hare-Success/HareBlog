@@ -15,7 +15,20 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'docker/dockerBottom',
-        'docker/dockerImages'
+        'docker/dockerImages',
+        {
+          type: 'category',
+          label: 'dockertest',
+          items:[
+              'docker/dockertest/testdocker',
+          ]
+        },{
+          type: 'category',
+          label: 'testdocker',
+          items:[
+            'docker/testdocker/dockertest'
+          ]
+        }
       ],
     },
     {
