@@ -215,6 +215,7 @@ const config: Config = {
         docs: {
           path: 'docs',
           sidebarPath: './sidebars.ts',
+          showLastUpdateTime: true,
         },
         // Test 纯文档模式:https://docusaurus.io/zh-CN/docs/docs-introduction
         blog: {
