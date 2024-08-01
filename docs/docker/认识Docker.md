@@ -10,6 +10,11 @@ import TabItem from '@theme/TabItem';
 
 # **简单认识Docker**
 
+:::note[谨记于心]
+docker 必须依赖于Linux内核的系统！想使用docker必须有一个Linux环境！
+:::
+
+
 ## Docker三兄弟
 
 <Tabs>

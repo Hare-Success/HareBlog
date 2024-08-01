@@ -19,9 +19,10 @@ const sidebars: SidebarsConfig = {
         'docker/dockerImages',
         {
           type: 'category',
-          label: 'dockertest',
+          label: 'Docker容器',
           items:[
-              'docker/dockertest/testdocker',
+              'docker/Docker容器/dockerRun',
+              'docker/Docker容器/dockerBackRun',
           ]
         },{
           type: 'category',

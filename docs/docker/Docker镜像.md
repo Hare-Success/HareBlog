@@ -46,7 +46,7 @@ docker search redis --limit 2 # 限制查询条数
 ```bash title='删除镜像'
 docker rmi 镜像名称 # 根据名称删除
 docker rmi 镜像ID # 根据镜像ID
-🚫 docker rmi -f ${docker images -qa} # 删除全部镜像
+🚫 docker rmi -f $(docker images -qa) # 删除全部镜像
 ```
 
 ### `docker pull` {#imagesPull}
