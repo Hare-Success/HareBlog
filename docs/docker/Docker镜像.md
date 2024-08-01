@@ -21,12 +21,12 @@ java类可以 new 对象。docker images 就可以生成一个容器！💨[容�
 ## 镜像命令
 
 :::note
-**查询镜像列表表头含义介绍:** <br/>
-**REPOSITORY:** 镜像名称 <br/>
-**TAG:** 版本号 <br/>
-**IMAGES ID:** 镜像ID <br/>
-**CREATED:** 创建时间 <br/>
-**SIZE:** 镜像大小
++ **查询镜像列表表头含义介绍:** <br/>
++ **REPOSITORY:** 镜像名称 <br/>
++ **TAG:** 版本号 <br/>
++ **IMAGES ID:** 镜像ID <br/>
++ **CREATED:** 创建时间 <br/>
++ **SIZE:** 镜像大小
 :::
 
 ### `docker images` {#dockerImages}

@@ -1,0 +1,115 @@
+---
+id: dockerInstall
+title: Docker安装
+authors: Hare
+tags: [docker]
+---
+
+# 安装Docker
+
+**[官网地址](docs.docker.com/engine/install/centos/)**
+
+## 确定Centos版本 {#versionCentos}
+
+```bash title='查看centos版本'
+cat /etc/redhat-release # 需要Centos 7及以上的版本
+```
+
+## 卸载旧版本 {#removeDocker}
+
+:::warning
+如果之前安装过，需要卸载再次安装！第一次可直接跳过
+🚫🚫 生产环境，可得注意昂！可别犯浑直接卸载了，你就废废的了！
+:::
+
+```bash title='卸载命令'
+sudo yum remove docker \
+                docker-client \
+                docker-client-latest \
+                docker-common \
+                docker-latest \
+                docker-latest-logrotate \
+                docker-logrotate \
+                docker-engine
+```
+
+## 安装Yum的gcc {#installGcc}
+
+```bash title='安装gcc'
+sudo yum -y install gcc # 安装gcc
+sudo  yum -y install gcc-c++ # 安装gcc+
+```
+## 安装Docker软件包 {#installJar}
+
+### `yum-utils` {#yumUtils}
+
+```bash title='安装yum-utils'
+sudo yum install -y yum-utils
+```
+
+### `yum-config-manager` {#yumManager}
+
+```bash title='安装stable repository镜像仓库'
+# 理论上直接 cv 官网即可，但他的仓库地址我们国内访问很慢。所以不建议用官方的！
+sudo yum-config-manager \
+   --add-repo \
+   https://download.docker.com/linux/centos/docker-ce.repo
+
+# 替换仓库为国内地址:阿里
+sudo yum-config-manager \
+   --add-repo \
+   http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+```
+
+## 更新Yum软件包索引 {#updateYum}
+
+```bash title='可以速度快一点'
+yum makecache fast
+```
+
+## 安装Docker引擎 {#dockerCli}
+
+```bash
+sudo yum -y install docker-ce docker-ce-cli containerd.io
+```
+
+## 安装完成启动Docker {#installResult}
+
+```bash title='测试是否安装成功'
+systemctl start docker  # 启动docker
+systemctl status docker # 查看docker状态，若出现running字样就是子弹已经飞起来！ 啊呜！
+```
+
+## 镜像加速配置 {#imagesAccelerate}
+
++ 注册阿里云
++ search 容器镜像服务
++ 左侧侧边栏选择镜像加速，复制地址
++ 选择对应系统，根据阿里云提供命令 无脑cv执行
+
+
+## Docker服务命令
+
+### `systemctl start docker`
+启动docker服务
+
+### `systemctl status docker`
+查看docker状态信息
+
+### `systemctl stop docker`
+停止docker服务
+
+### `systemctl restart docker`
+重启docker服务
+
+### `systemctl enable docker`
+开机启动docker服务
+
+:::note[旧方式]
+比较旧的的方式，若systemctl不管用可以试试  service
+:::
+
+### `service docker start`
+### `service docker stop`
+### `service docker restart`
+

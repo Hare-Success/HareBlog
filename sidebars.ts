@@ -15,6 +15,7 @@ const sidebars: SidebarsConfig = {
       },
       items: [
         'docker/dockerBottom',
+        'docker/dockerInstall',
         'docker/dockerImages',
         {
           type: 'category',
