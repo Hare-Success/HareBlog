@@ -23,6 +23,7 @@ const sidebars: SidebarsConfig = {
           items:[
               'docker/Docker容器/dockerRun',
               'docker/Docker容器/dockerBackRun',
+              'docker/Docker容器/dockerCopyAndExport',
           ]
         },{
           type: 'category',
