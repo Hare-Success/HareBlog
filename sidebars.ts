@@ -24,13 +24,15 @@ const sidebars: SidebarsConfig = {
               'docker/Docker容器/dockerRun',
               'docker/Docker容器/dockerBackRun',
               'docker/Docker容器/dockerCopyAndExport',
-          ]
-        },{
-          type: 'category',
-          label: 'testdocker',
-          items:[
-            'docker/testdocker/dockertest'
-          ]
+            {
+              type: 'category',
+              label: 'Docke容器卷',
+              items:[
+                'docker/Docker容器/Docker数据卷/dockerVolum',
+                'docker/Docker容器/Docker数据卷/dockerMysql',
+              ],
+            },
+          ],
         }
       ],
     },

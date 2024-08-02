@@ -81,3 +81,10 @@ docker rm 容器ID/名称
 ```bash
 docker rm -f 容器ID/名称
 ```
+
+## 提交新的镜像 {#newImagesDocker}
+
+### `docker commit`
+```bash
+docker commit -m="提交信息" -a="作者" 容器ID 镜像名称:tag
+```
