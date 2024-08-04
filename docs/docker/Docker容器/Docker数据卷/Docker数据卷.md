@@ -23,5 +23,10 @@ tags: [docker]
 docker run -it --privileged=true -v (宿主机目录) /tmp/docker_data:(容器内部目录)/tmp/docker_data --name=myub ubuntu bash
 ```
 :::tip[注意啦]
-宿主机目录和容器目录，如果原先没有docker会自动创建！
+* 宿主机目录和容器目录，如果原先没有docker会自动创建！
+* 以上数据卷挂载默认方式rw方式（宿主机and容器都能读写）完整命令在容器目录后加:rw
+```bash title='完整命令'
+docker run -it --privileged=true -v (宿主机目录) /tmp/docker_data:(容器内部目录)/tmp/docker_data:rw --name=myub ubuntu bash
+```
+* **若只想容器只读不写，将rw换为ro（read only）即可**
 :::
