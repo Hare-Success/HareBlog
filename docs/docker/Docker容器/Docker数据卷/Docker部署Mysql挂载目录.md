@@ -105,7 +105,26 @@ Hare是在/usr/local/dockerdata/mysql下！
 
 + 挂载的日志文件宿主机目录:/usr/local/dockerdata/mysql/log
 + 挂载的数据文件宿主机目录:/usr/local/dockerdata/mysql/data
-+ 挂载的配置文件宿主机目录:/usr/local/dockerdata/mysql/conf/config-file.cnf
++ 挂载的配置文件宿主机目录:/usr/local/dockerdata/mysql/conf
+
+:::tip[重要]
+在配置目录/usr/local/dockerdata/mysql/conf中自定义一个cnf配置文件，将其挂载
+```bash title='简单配置'
+[client]
+default-character-set=utf8mb4
+
+[mysql]
+default-character-set=utf8mb4
+
+[mysqld]
+init_connect="SET collation_connection = utf8mb4_unicode_ci"
+init_connect="SET NAMES utf8mb4"
+character-set-server=utf8mb4
+collation-server=utf8mb4_unicode_ci
+skip-character-set-client-handshake
+skip-name-resolve
+```
+:::
 
 ### docker pull Mysql拉镜像
 
@@ -118,7 +137,7 @@ docker pull mysql:5.7
 ### docker run 启动Mysql容器
 
 ```bash title='容器启！！'
-docker run -p 3306:3306 --name=testmysql -v /usr/local/dockerdata/mysql/log:/var/log/mysql -v /usr/local/dockerdata/mysql/data:/var/lib/mysql -v /usr/local/dockerdata/mysql/conf/config-file.cnf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7
+docker run -p 3306:3306 --name=testmysql -v /usr/local/dockerdata/mysql/log:/var/log/mysql -v /usr/local/dockerdata/mysql/data:/var/lib/mysql -v /usr/local/dockerdata/mysql/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7
 ```
 **解释下:**
 
