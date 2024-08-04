@@ -30,3 +30,15 @@ docker run -it --privileged=true -v (宿主机目录) /tmp/docker_data:(容器�
 ```
 * **若只想容器只读不写，将rw换为ro（read only）即可**
 :::
+
+## 数据卷继承
+类似Java继承类，而数据卷继承请看以下命令:
+
+```bash
+# 使用 --volumes- from 父容器
+docker run -it --privileged=true --volumes- from u1 --name u2 ubuntu 
+```
+继承所产生的效果如下:
+* 宿主机写俩容器都能读到。
+* 一个容器u1写，宿主机和u2容器能读。反之u2容器写同样效果。
+* 一个容器挂，不挨着另一个容器啥事，另一个该吃吃该喝喝。

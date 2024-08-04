@@ -113,7 +113,7 @@ Hare是在/usr/local/dockerdata/mysql下！
 [client]
 default-character-set=utf8mb4
 
-[mysql]
+
 default-character-set=utf8mb4
 
 [mysqld]
@@ -137,7 +137,8 @@ docker pull mysql:5.7
 ### docker run 启动Mysql容器
 
 ```bash title='容器启！！'
-docker run -p 3306:3306 --name=testmysql -v /usr/local/dockerdata/mysql/log:/var/log/mysql -v /usr/local/dockerdata/mysql/data:/var/lib/mysql -v /usr/local/dockerdata/mysql/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7
+docker run -p 3306:3306 --name=testmysql -v /usr/local/dockerdata/mysql/log:/var/log/mysql -v /usr/local/dockerdata/mysql/data:/var/lib/mysql -v /usr/local/dockerdata/mysql/conf:/etc/mysql/conf.d 
+-e MYSQL_ROOT_PASSWORD=123456 -d --restart=always mysql:5.7
 ```
 **解释下:**
 
@@ -151,8 +152,13 @@ docker run -p 3306:3306 --name=testmysql -v /usr/local/dockerdata/mysql/log:/var
 + -e: 设置密码
 + -d: 后台启动
 
-:::warning[注意点]
+:::warning[重要]
 通过以上步骤，使用工具即可连接Mysql了，但还有要注意的地方！
 
 + 记得宿主机开放3306端口。别连不上一头懵~~
++ --restart=always命令:好多文章只说容器停止自动重启，关键Hare手动stop没有重启一直认为安装docker出问题。实际是当你手动stop容器。你必须重启systemctl restart docker才可以。
+[官方说明地址](https://docs.docker.com/config/containers/start-containers-automatically/)
+> 	Always restart the container if it stops. If it's manually stopped, it's restarted only when Docker daemon restarts or the container itself is manually restarted. (See the second bullet listed in restart policy details)
+
+> 大意就是如果容器停止，总是要重新启动。 如果是手动停止，只有在 Docker 守护进程重启或容器本身手动重启时才会重新启动。
 :::
