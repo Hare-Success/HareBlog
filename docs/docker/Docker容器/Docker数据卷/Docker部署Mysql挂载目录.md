@@ -137,7 +137,7 @@ docker pull mysql:5.7
 ### docker run 启动Mysql容器
 
 ```bash title='容器启！！'
-docker run -p 3306:3306 --name=testmysql -v /usr/local/dockerdata/mysql/log:/var/log/mysql -v /usr/local/dockerdata/mysql/data:/var/lib/mysql -v /usr/local/dockerdata/mysql/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=123456 -d --restart=always mysql:5.7
+docker run -p 3306:3306 --name=testmysql -v /usr/local/dockerdata/mysql/log:/var/log/mysql -v /usr/local/dockerdata/mysql/data:/var/lib/mysql -v /usr/local/dockerdata/mysql/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=123456 -d --privileged=true --restart=always mysql:5.7
 ```
 **解释下:**
 
@@ -179,7 +179,7 @@ date
 #### 容器启动解决
 可直接在容器启动加上 **-e TZ=Asia/Shanghai参数**
 ```bash title='解决时区问题'
-docker run -p 3306:3306 --name=testmysql -v /usr/local/dockerdata/mysql/log:/var/log/mysql -v /usr/local/dockerdata/mysql/data:/var/lib/mysql -v /usr/local/dockerdata/mysql/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=123456 -e TZ=Asia/Shanghai -d --restart=always mysql:5.7
+docker run -p 3306:3306 --name=testmysql -v /usr/local/dockerdata/mysql/log:/var/log/mysql -v /usr/local/dockerdata/mysql/data:/var/lib/mysql -v /usr/local/dockerdata/mysql/conf:/etc/mysql/conf.d -e MYSQL_ROOT_PASSWORD=123456 -e TZ=Asia/Shanghai --privileged=true -d --restart=always mysql:5.7
 ```
 #### 容器时区解决
 若是mysql容器时区有问题，直接修改容器的时区
@@ -189,8 +189,44 @@ apt-get install tzdata
 ln -fs /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 dpkg-reconfigure -f noninteractive tzdata
 ```
+#### 自定义配置文件解决
+
+```bash
+# 在宿主机自建的配置文件中，加上时区设置，在启动时即可不加 -e 参数
+[mysqld]  
+default-time-zone='Asia/Shanghai'
+```
+> 以上方案可根据自身情况而定哦！
+
+
+
+## 如何开启binlog日志
+因为HareMysql是5.7版本的，需要手动开启binlog。而如果你是Mysql8.0及以上是默认开启的。具体可用下面命令查看是否开启:
+```bash
+show variables like 'log_bin';
+```
+:::note[官方原话]
+[官方地址](https://dev.mysql.com/doc/refman/8.0/en/replication-options-binary-log.html#sysvar_sync_binlog)
+In earlier MySQL versions, binary logging was disabled by default, and was enabled if you specified the --log-bin option. From MySQL 8.0, binary logging is enabled by default, whether or not you specify the --log-bin option. The exception is if you use mysqld to initialize the data directory manually by invoking it with the --initialize or --initialize-insecure option, when binary logging is disabled by default. It is possible to enable binary logging in this case by specifying the --log-bin option. When binary logging is enabled, the log_bin system variable, which shows the status of binary logging on the server, is set to ON.
+:::
+
+### MySql5.7开启binlog
+```bash
+[mysqld]
+log-bin=/var/lib/mysql/mysql-bin
+server-id=1
+
+binlog_format=MIXED
+expire_logs_days=30
+```
 
 :::warning[重要]
+
 通过以上步骤，使用工具即可连接Mysql了，但还有要注意的地方！
 + 记得宿主机开放3306端口。别连不上一头懵~~
++ apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 467B942D3A79BD29
+若遇到类似问题:
+> GPG error: http://repo.mysql.com/apt/debian buster InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 467B942D3A79BD29
+> 输入上述apt-key 命令 最后那个就是你报错显示的key 替换掉！
+
 :::
