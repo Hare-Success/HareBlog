@@ -33,6 +33,19 @@ const sidebars: SidebarsConfig = {
               ],
             },
           ],
+        },
+        {
+          type: 'category',
+          label: 'Docker部署微服务',
+          link: {
+            type: 'generated-index',
+            description:
+                "从无到有，从JDK到MysSql-从中间件到各个网关再到各个服务！Docker部署微服务全流程",
+            keywords: ['docker'],
+          },
+          items:[
+            'docker/Docker部署微服务/dockerBuildJdk',
+          ]
         }
       ],
     },
