@@ -82,6 +82,13 @@ ENV LANG zh_CN.UTF-8
 ENV LC_ALL zh_CN.UTF-8
 
 ~~~
+:::warning[关于字体库]
+这几个字体可以到windows中C:\Windows\Fonts 这个路径下找一下，或者去网上download
+./font/simsun.ttc 
+./font/msyh.ttc 
+./font/msyhbd.ttc 
+./font/msyhl.ttc 
+:::
 
 ## build镜像
 
@@ -90,3 +97,7 @@ ENV LC_ALL zh_CN.UTF-8
 docker build -t image名称:标签tag .
 [docker build -t centos_jdk17:17.0.11 .]
 ~~~
+
+:::note
+权当练习Docker了，一般使用官方的openjdk就行，上面流程下来 一个jdk镜像1个多G
+:::

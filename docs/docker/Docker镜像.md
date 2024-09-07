@@ -54,3 +54,17 @@ docker rmi 镜像ID # 根据镜像ID
 docker pull 镜像名称 # 默认不指定版本号，拉取最新的
 docker pull 镜像名称:版本号
 ```
+## 虚悬镜像？
+
+使用 docker images镜像时，会出现仓库是<none> 标签是<none>这种就叫虚悬镜像（也就是错误镜像）而且占据一定的内存空间！
+
+### 查询虚悬镜像
+
+~~~bash title='查询虚悬镜像'
+docker images -f dangling=true
+~~~
+
+### 删除虚悬镜像
+~~~bash title='删除虚悬镜像'
+docker rmi $(docker images -q -f dangling=true)
+~~~
