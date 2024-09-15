@@ -99,5 +99,5 @@ docker build -t image名称:标签tag .
 ~~~
 
 :::note
-权当练习Docker了，一般使用官方的openjdk就行，上面流程下来 一个jdk镜像1个多G
+不会自定义镜像，权当练习Docker了，一般使用官方的openjdk就行，上面流程下来 一个jdk镜像1个多G。。。。
 :::

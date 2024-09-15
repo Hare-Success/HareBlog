@@ -45,6 +45,7 @@ const sidebars: SidebarsConfig = {
           },
           items:[
             'docker/Docker部署微服务/dockerBuildJdk',
+              'docker/Docker部署微服务/dockerRunNacos'
           ]
         }
       ],
