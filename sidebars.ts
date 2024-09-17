@@ -64,19 +64,20 @@ const sidebars: SidebarsConfig = {
     },
   ],
   // docusaurus配置
-  Docusaurus: [
-    {
-      type: 'category',
-      label: 'Docusaurus配置',
-      link: {
-        type: 'generated-index',
-        title: 'Docusaurus 配置',
-        description:
-            "这篇文章是关于Hare配置Docusaurus时，总结后的相关配置希望能帮助到你",
-        keywords: ['docusaurus'],
-      },
-      items: ['docusaurus/sidebar', 'docusaurus/comment'],
-    },
+  GoDataBlog: [
+      'GoDataBlog/NodeVersionMan'
+    // {
+    //   type: 'category',
+    //   label: 'Docusaurus配置',
+    //   link: {
+    //     type: 'generated-index',
+    //     title: 'Docusaurus 配置',
+    //     description:
+    //         "这篇文章是关于Hare配置Docusaurus时，总结后的相关配置希望能帮助到你",
+    //     keywords: ['docusaurus'],
+    //   },
+    //   items: ['docusaurus/sidebar', 'docusaurus/comment'],
+    // },
   ],
 }
 

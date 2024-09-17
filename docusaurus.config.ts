@@ -67,9 +67,9 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
-          label: 'Docusaurus',
+          label: '前端',
           position: 'right',
-          sidebarId: 'Docusaurus',
+          sidebarId: 'GoDataBlog',
         },
         {
           type: 'docSidebar',
