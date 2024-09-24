@@ -17,6 +17,7 @@ const sidebars: SidebarsConfig = {
         'docker/dockerBottom',
         'docker/dockerInstall',
         'docker/dockerImages',
+        'docker/dockerNetwork',
         {
           type: 'category',
           label: 'Docker容器',
