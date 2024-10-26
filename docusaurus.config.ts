@@ -164,6 +164,7 @@ const config: Config = {
         'rust',
         'toml',
         'protobuf',
+        'yaml',
       ],
       defaultLanguage: 'javascript',
       magicComments: [
