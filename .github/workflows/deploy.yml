@@ -43,5 +43,7 @@ jobs: # 工作流
         env:
           USE_SSH: true
         run: |
+            git config user.name $GIT_USER
+            git config user.email $GIT_EMAIL
             pnpm run deploy
 
