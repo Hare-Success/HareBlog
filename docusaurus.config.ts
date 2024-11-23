@@ -60,11 +60,11 @@ const config: Config = {
           position: 'right',
           to: 'blog',
         },
-        {
-          label: '项目',
-          position: 'right',
-          to: 'project',
-        },
+        // {
+        //   label: '项目',
+        //   position: 'right',
+        //   to: 'project',
+        // },
         {
           type: 'docSidebar',
           label: '前端',
