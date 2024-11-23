@@ -92,7 +92,7 @@ const sidebars: SidebarsConfig = {
                 type: 'generated-index',
                 description:
                     "关于数据结构以及算法的学习，从书籍,视频,文章吸取精华!!",
-                keywords: ['数据结构', '算法'],
+                keywords: ['数据结构',  '算法'],
             },
             items: [
                 'docker/Docker容器/dockerRun',
