@@ -73,7 +73,7 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
-          label: '数据结构&算法',
+          label: '数据结构AND算法',
           position: 'right',
           sidebarId: 'DataStructuresAlgorithms',
         },
