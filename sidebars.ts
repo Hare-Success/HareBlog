@@ -95,17 +95,7 @@ const sidebars: SidebarsConfig = {
                 keywords: ['数据结构',  '算法'],
             },
             items: [
-                'docker/Docker容器/dockerRun',
-                'docker/Docker容器/dockerBackRun',
-                'docker/Docker容器/dockerCopyAndExport',
-                {
-                    type: 'category',
-                    label: 'Docke容器卷',
-                    items: [
-                        'docker/Docker容器/Docker数据卷/dockerVolum',
-                        'docker/Docker容器/Docker数据卷/dockerMysql',
-                    ],
-                }
+                'DataStructuresAlgorithms/数据结构/线性结构/linearStructure',
             ]
         },
         {
@@ -119,16 +109,6 @@ const sidebars: SidebarsConfig = {
             },
             items: [
                 'DataStructuresAlgorithms/算法/algorithmsBinarySearch',
-                'docker/Docker容器/dockerBackRun',
-                'docker/Docker容器/dockerCopyAndExport',
-                {
-                    type: 'category',
-                    label: 'Docke容器卷',
-                    items: [
-                        'docker/Docker容器/Docker数据卷/dockerVolum',
-                        'docker/Docker容器/Docker数据卷/dockerMysql',
-                    ],
-                }
             ]
         }
     ]
