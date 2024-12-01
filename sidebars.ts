@@ -64,7 +64,9 @@ const sidebars: SidebarsConfig = {
                 keywords: ['redis'],
             },
             items: [
-                'redis/redisString'],
+                'redis/redisString',
+                'redis/redisList',
+            ],
         },
     ],
     // docusaurus配置
