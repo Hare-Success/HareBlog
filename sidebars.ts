@@ -111,6 +111,19 @@ const sidebars: SidebarsConfig = {
             },
             items: [
                 'DataStructuresAlgorithms/算法/algorithmsBinarySearch',
+                {
+                    type: 'category',
+                    label: '十大排序',
+                    link: {
+                        type: 'generated-index',
+                        description:
+                            "关于数据结构以及算法的学习，从书籍,视频,文章吸取精华!!",
+                        keywords: ['数据结构', '算法','排序'],
+                    },
+                    items: [
+                        'DataStructuresAlgorithms/算法/十大排序/algorithmsBubbleSort',
+                    ]
+                }
             ]
         }
     ]
