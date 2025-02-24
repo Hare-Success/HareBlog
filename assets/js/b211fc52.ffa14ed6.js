@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkHareBlog=self.webpackChunkHareBlog||[]).push([[3569],{859:e=>{e.exports=JSON.parse('{"tag":{"label":"vue","permalink":"/docs/tags/vue","allTagsPath":"/docs/tags","count":1,"items":[{"id":"GoDataBlog/Vue/VueComponent","title":"Vue\u7ec4\u4ef6","description":"","permalink":"/docs/GoDataBlog/Vue/VueComponent"}],"unlisted":false}}')}}]);
