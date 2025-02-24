@@ -71,19 +71,19 @@ const sidebars: SidebarsConfig = {
     ],
     // docusaurus配置
     GoDataBlog: [
-        'GoDataBlog/NodeVersionMan'
-        // {
-        //   type: 'category',
-        //   label: 'Docusaurus配置',
-        //   link: {
-        //     type: 'generated-index',
-        //     title: 'Docusaurus 配置',
-        //     description:
-        //         "这篇文章是关于Hare配置Docusaurus时，总结后的相关配置希望能帮助到你",
-        //     keywords: ['docusaurus'],
-        //   },
-        //   items: ['docusaurus/sidebar', 'docusaurus/comment'],
-        // },
+        'GoDataBlog/NodeVersionMan',
+        {
+          type: 'category',
+          label: 'Vue相关',
+          link: {
+            type: 'generated-index',
+            title: 'Vue相关学习',
+            description:
+                "这些都是个人学习Vue的记录，如果有哪写文章能帮助你我很开心",
+            keywords: ['vue'],
+          },
+          items: ['GoDataBlog/Vue/VueComponent'],
+        }
     ],
     // 数据结构与算法
     DataStructuresAlgorithms: [
