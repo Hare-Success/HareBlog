@@ -79,7 +79,12 @@ const sidebars: SidebarsConfig = {
             type: 'generated-index',
             title: 'Vue相关学习',
             description:
-                "这些都是个人学习Vue的记录，如果有哪写文章能帮助你我很开心",
+            `这些都是个人学习Vue的记录，如果有哪写文章能帮助你我很开心! vue是vue2。
+             涉及到一些版:
+                vue=@vue/cli 5.0.8+
+                node=v20.15.0+
+                npm=10.7.0
+            `,
             keywords: ['vue'],
           },
           items: ['GoDataBlog/Vue/VueComponent'],
