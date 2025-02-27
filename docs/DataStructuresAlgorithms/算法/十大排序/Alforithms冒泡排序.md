@@ -35,14 +35,15 @@ import TabItem from '@theme/TabItem';
 <Tabs>
   <TabItem value="Java" label="Java" default>
     ~~~java
-        public static int bubbleSort(int[] num) {
-        int temp=0;
-        for (int i=1;i<num.length;i++) {
-            for (int j=i;j>0;j--){
-                if(num[j-1]>num[j]){
-                    temp=num[j];
-                    num[j]=num[j-1];
-                    num[j-1]=temp;
+        public static int bubbleSort(int[] param) {
+        int length = param.length;
+        int temp = 0;
+        for (int i = 0; i < length-1; i++) {
+            for (int j = 0; j < length - 1 -i; j++) {
+                if (param[j] > param[j+1]) {
+                    temp = param[j];
+                    param[j] = param[j+1];
+                    param[j+1] = temp;
                 }
             }
         }
@@ -53,23 +54,23 @@ import TabItem from '@theme/TabItem';
   <TabItem value="Java最优" label="Java最优情况">
     ~~~java
     public static int bubbleSort(int[] num) {
-        int temp=0;
-        for (int i=1;i<num.length;i++) {
-        boolean isF=false；
-        for (int j=i;j>0;j--){
-            if(num[j-1]>num[j]){
-                temp=num[j];
-                num[j]=num[j-1];
-                num[j-1]=temp;
-                isF=true;
+        int length = param.length;
+        int temp = 0;
+        for (int i = 0; i < length-1; i++) {
+            boolean flg = false;
+            for (int j = 0; j < length - 1 -i; j++) {
+                if (param[j] > param[j+1]) {
+                    temp = param[j];
+                    param[j] = param[j+1];
+                    param[j+1] = temp;
+                    flg = true;
+                }
+            }
+            if(!flg){
+              //那就是代表元素已经是排好的并没有进行交换
+              return;
             }
         }
-        if(!isF){
-          //那就是代表元素已经是排好的并没有进行交换
-          return;
-        }
-    
-  }
   // 以上代码中加入boolean控制，当第一次就没有元素进行交换，那就是说明元素本身就是有序的。**那对于时间复杂度就是线性阶:O(n)**
 ｝
     ~~~
