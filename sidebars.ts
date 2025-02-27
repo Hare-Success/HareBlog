@@ -87,7 +87,10 @@ const sidebars: SidebarsConfig = {
             `,
             keywords: ['vue'],
           },
-          items: ['GoDataBlog/Vue/VueComponent'],
+          items: [
+              'GoDataBlog/Vue/VueComponent',
+              'GoDataBlog/Vue/VueSlot',
+          ],
         }
     ],
     // 数据结构与算法
