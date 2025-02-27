@@ -145,3 +145,38 @@ export default {
     }
 }
 ~~~
+
+## 获取组件
+
+### 获取子组件
+使用$children来获取子组件，若是多个子组件返回的就是Array，可以获取子组件方法，变量等。
+
+### 获取父组件
+使用$parent来获取父组件，可以获取父组件的方法，变量等。
+
+## $refs 获取组件
+
+~~~js
+
+<template>
+    <div>
+        <ComponentB ref="refChildren"/>
+    </div>
+</template>
+
+
+export default{
+    name:"ComponentA",
+    data(){
+        return{
+            
+        }
+    },
+    methods:{
+        btnMethods(){
+            this.$refs.refChildren.方法()
+            this.$refs.refChildren.变量
+        }
+    }
+}
+~~~
