@@ -133,6 +133,31 @@ const sidebars: SidebarsConfig = {
                     ]
                 }
             ]
+        },
+        {
+            type: 'category',
+            label: '设计模式',
+            link: {
+                type: 'generated-index',
+                description:
+                    "关于设计模式的学习",
+                keywords: ['设计模式'],
+            },
+            items: [
+                {
+                    type: 'category',
+                    label: '创建型模式',
+                    link: {
+                        type: 'generated-index',
+                        description:
+                            "创建型模式关注点在于如何创建对象，对象的创建和使用相分离",
+                        keywords: ['设计模式'],
+                    },
+                    items: [
+                        'DataStructuresAlgorithms/设计模式/创建型模式/singLeton',
+                    ]
+                }
+            ]
         }
     ]
 }
