@@ -77,7 +77,7 @@ const sidebars: SidebarsConfig = {
                         'redis/基础命令/redisString',
                         'redis/基础命令/redisList',
                         'redis/基础命令/redisHash',
-                        'redis/基础命令/redisHSet',
+                        'redis/基础命令/redisSet',
                         'redis/基础命令/redisSortedSet'
                     ],
                 },
