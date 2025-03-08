@@ -18,7 +18,7 @@ Redis lists are linked lists of string values. Redis lists are frequently used t
 List的数据类型是一个双端链表实现方式，其中LPUSH从头添加元素，RPUSH从尾添加元素。即可以用List实现队列的使用。
 
 Redis lists are implemented via Linked Lists. This means that even if you have millions of elements inside a list, the operation of adding a new element in the head or in the tail of the list is performed in constant time. The speed of adding a new element with the LPUSH command to the head of a list with ten elements is the same as adding an element to the head of list with 10 million elements.
-官方说明了，甭管你是100w、100还是1000w,使用LPUSH和RPUSH速度相同（这不就是链表嘛），想想看链表的特性[线性表](../DataStructuresAlgorithms/数据结构/线性结构/线性表.md)<br/>
+官方说明了，甭管你是100w、100还是1000w,使用LPUSH和RPUSH速度相同（这不就是链表嘛），想想看链表的特性[线性表](../../DataStructuresAlgorithms/数据结构/线性结构/线性表.md)<br/>
 
 Lists are useful for a number of tasks, two very representative use cases are the following:
 * Remember the latest updates posted by users into a social network.
@@ -42,7 +42,7 @@ To describe a common use case step by step, imagine your home page shows the lat
 
 #### `LPUSH 从左往右插入`
 ~~~
-LPUSH命令从头开始依次添加元素，先进的排在后面，后进的排在前面。留个谜底想想这是哪种数据结构的特性?
+LPUSH命令从头开始依次添加元素，先进的排在后面，后进的排在前面。
 ~~~
 <Tabs>
 
@@ -86,7 +86,7 @@ LPUSH命令从头开始依次添加元素，先进的排在后面，后进的排
 #### `RPUSH 从右往左插入`
 
 ~~~
-RPUSH命令从尾开始依次添加元素，先进的排在前面，后进的排在后面。留个谜底想想这是哪种数据结构的特性?
+RPUSH命令从尾开始依次添加元素，先进的排在前面，后进的排在后面。
 ~~~
 
 <Tabs>
@@ -253,6 +253,24 @@ LPOP key [count]
   <TabItem value="Java" label="Java">
     ~~~java
     redisTemplate.opsForList().index("list:model", 2)
+    ~~~
+  </TabItem>
+</Tabs>
+
+
+### `RPOPLPUSH list list1`
+对于两个list来说，从key是list左边删，在key是list1的左边进
+
+<Tabs>
+  <TabItem value="Redis Command" label="Redis Command" default>
+   ~~~bash
+    127.0.0.1:6379> RPOPLPUSH list list1
+    "v1"
+   ~~~
+  </TabItem>
+  <TabItem value="Java" label="Java">
+    ~~~java
+    redisTemplate.opsForList().rightPopAndLeftPush(list.list1);
     ~~~
   </TabItem>
 </Tabs>

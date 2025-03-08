@@ -158,6 +158,7 @@ EX: 设置过期时间，单位秒
 </Tabs>
 
 #### `MSETNX 同 nx`
+若是有的key原先存在，有的key本身不存在 使用MSETNX不会成功
 <Tabs>
   <TabItem value="Redis Command" label="Redis Command" default>
    ~~~bash

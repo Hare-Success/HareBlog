@@ -64,8 +64,23 @@ const sidebars: SidebarsConfig = {
                 keywords: ['redis'],
             },
             items: [
-                'redis/redisString',
-                'redis/redisList',
+                {
+                    type: 'category',
+                    label: 'Redis',
+                    link: {
+                        type: 'generated-index',
+                        description:
+                            "关于中间件Redis基础命令学习",
+                        keywords: ['redis'],
+                    },
+                    items: [
+                        'redis/基础命令/redisString',
+                        'redis/基础命令/redisList',
+                        'redis/基础命令/redisHash',
+                        'redis/基础命令/redisHSet',
+                        'redis/基础命令/redisSortedSet'
+                    ],
+                },
             ],
         },
     ],
