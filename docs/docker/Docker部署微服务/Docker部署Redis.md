@@ -7,7 +7,16 @@ tags: [docker,redis]
 
 # Docker部署Redis
 **redis.conf 配置文件下载地址:** [官网地址](https://redis.io/docs/latest/operate/oss_and_stack/management/config/)
-
+直接在服务器wget下载: 
+~~~bash
+ wget  https://raw.githubusercontent.com/redis/redis/6.0/redis.conf -O redis.conf
+ # 若以上不行，加上--no-cookie --no-check-certificate
+ wget --no-cookie --no-check-certificate  https://raw.githubusercontent.com/redis/redis/6.0/redis.conf -O redis.conf
+ 
+ 若还是不行，在hosts配置映射
+ 
+ 实在不行，本机下载后，通过工具上传把
+~~~
 ## 创建挂载文件
 
 在宿主机中创建以下两个目录文件:
@@ -40,8 +49,9 @@ appendonly yes
 # IPv4 and IPv6 loopback addresses 127.0.0.1 and ::1, and from Unix domain
 # sockets.
 保护模式说明:
-1. bind 127.0.0.1 没有指定 + 没有requirepass password密码 +  protected-mode yes 能访问但是只能本机
-2. bind 127.0.0.1 指定 or 指定requirepass password密码 + protected-mode yes 保护模式失去作用，靠的是你设置的密码或者bind 绑定机器
+若 bind 127.0.0.1 没有指定 + 没有requirepass password密码 +  protected-mode yes 能访问但是只能本机
+若 bind 127.0.0.1 指定了 or 指定requirepass password密码 + protected-mode yes 保护模式失去作用，靠的是你设置的密码或者bind 绑定机器
+
 protected-mode yes
 requirepass 123456
 
@@ -51,5 +61,10 @@ requirepass 123456
 ## 启动redis
 ~~~bash
 docker run --name redis --privileged=true --restart=always -p 6379:6379 -v /usr/local/dockerdata/redis/data:/data -v /usr/local/dockerdata/redis/conf/redis.conf:/etc/redis/redis.conf -d redis:6.0.8 redis-server /etc/redis/redis.conf
+~~~
+
+## 进入redis容器
+~~~bash
+docker exec -it 容器id bash/sh
 ~~~
 
