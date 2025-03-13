@@ -38,6 +38,11 @@ Options
 :::
 
 #### `SET KEY VALUE`
+
+:::note
+注意当set同一个key的value，后一个会覆盖前一个的值。
+:::
+
 <Tabs>
   <TabItem value="Redis Command" label="Redis Command" default>
    ~~~bash
@@ -72,7 +77,12 @@ nx: 仅设置不存在的key
 </Tabs>
 
 #### `SET KEY VALUE XX`
-xx: 设置已存在的key，相当于替换了原先的值
+:::note
+xx: 设置已存在的key，相当于替换了原先的值<br/>
+与不设置xx区别是: 若不设置xx，set 相同的key 若key存在则覆盖，不存在则创建<br/>
+设置了xx: 仅当key存在的时候，才会覆盖。原先key不存在则不会set成功。<br/>
+:::
+
 <Tabs>
     <TabItem value="Redis Command" label="Redis Command" default>
        ~~~bash

@@ -258,8 +258,12 @@ LPOP key [count]
 </Tabs>
 
 
-### `RPOPLPUSH list list1`
-对于两个list来说，从key是list左边删，在key是list1的左边进
+### `RPOPLPUSH6.2.0版本已废弃`
+
+:::note
+操作两个list，从list列表右边出，并在list1左边入！<br/>
+整体是一个原子操作
+:::
 
 <Tabs>
   <TabItem value="Redis Command" label="Redis Command" default>
@@ -270,7 +274,62 @@ LPOP key [count]
   </TabItem>
   <TabItem value="Java" label="Java">
     ~~~java
-    redisTemplate.opsForList().rightPopAndLeftPush(list.list1);
+    redisTemplate.opsForList().rightPopAndLeftPush(list,list1);
     ~~~
+  </TabItem>
+</Tabs>
+
+### `LMOVE6.2.0新出命令`
+:::note
+
+~~~bash
+LMOVE source destination <LEFT | RIGHT> <LEFT | RIGHT>
+~~~
+
+此命令是新版本中代替RPOPLPUSH的，具有和它相同的效果。并保证原子性！
+:::
+
+### 阻塞相关
+
+#### `BLPOP`
+
+:::note
+BLPOP 是一种阻塞列表弹出。它是 LPOP 的阻塞版本，因为当没有元素从任何给定列表中弹出时，它会阻塞连接。从第一个非空列表的头部弹出一个元素。<br/>
+**BRPOP同理**
+:::
+
+<Tabs>
+  <TabItem value="Redis Command" label="Redis Command" default>
+   ~~~bash
+    # 从key是list中弹出元素，并阻塞5秒。若key不存在元素，五秒后返回null
+    127.0.0.1:6379> BLPOP list 5
+    "list"
+    "v1"
+   ~~~
+  </TabItem>
+</Tabs>
+
+#### `BLMOVE`
+
+
+:::note
+~~~bash
+BLMOVE source destination <LEFT | RIGHT> <LEFT | RIGHT> timeout
+~~~
+
+BLMOVE是LMOVE阻塞版本，在有元素时与LMOVE相当，当没有元素时会阻塞直到有元素（timeout若设置为0，则无限阻塞）<br/>
+BRPOPLPUSH在高版本中已经废弃，由BLMOVE替代<br/>
+
+BLMPOP同理
+:::
+
+<Tabs>
+  <TabItem value="Redis Command" label="Redis Command" default>
+   ~~~bash
+    # 从key是list中弹出元素，并阻塞5秒。若key不存在元素，五秒后返回null
+    127.0.0.1:6379> BLMOVE list list1 LEFT RIGHT 10
+    "list"
+    "v1"
+   ~~~
   </TabItem>
 </Tabs>
