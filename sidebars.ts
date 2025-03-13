@@ -145,6 +145,8 @@ const sidebars: SidebarsConfig = {
                     },
                     items: [
                         'DataStructuresAlgorithms/算法/十大排序/algorithmsBubbleSort',
+                        'DataStructuresAlgorithms/算法/十大排序/algorithmsSelectSort'
+
                     ]
                 }
             ]
