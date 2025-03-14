@@ -14,7 +14,7 @@ A Redis sorted set is a collection of unique strings (members) ordered by an ass
 * Leaderboards. For example, you can use sorted sets to easily maintain ordered lists of the highest scores in a massive online game.
 * Rate limiters. In particular, you can use a sorted set to build a sliding-window rate limiter to prevent excessive API requests.
 :::
-* 
+
 ## ZADD 添加元素
 
 ZADD key [NX | XX] [GT | LT] [CH] [INCR] score member [score member
