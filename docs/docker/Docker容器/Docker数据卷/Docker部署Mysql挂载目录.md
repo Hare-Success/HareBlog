@@ -194,7 +194,7 @@ dpkg-reconfigure -f noninteractive tzdata
 ```bash
 # 在宿主机自建的配置文件中，加上时区设置，在启动时即可不加 -e 参数
 [mysqld]  
-default-time-zone='Asia/Shanghai'
+default-time-zone="Asia/Shanghai"
 ```
 > 以上方案可根据自身情况而定哦！
 
