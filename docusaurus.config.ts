@@ -150,11 +150,11 @@ const config: Config = {
     },
 
     // 搜索配置
-    // algolia: {
-    //   appId: 'GV6YN1ODMO',
-    //   apiKey: '50303937b0e4630bec4a20a14e3b7872',
-    //   indexName: 'kuizuo',
-    // },
+    algolia: {
+      appId: '9UV59UYM0G',
+      apiKey: '8ac9f608e7075681f2578c6199812647',
+      indexName: 'hare-blog',
+    },
 
     // 高亮
     prism: {
