@@ -83,11 +83,6 @@ const config: Config = {
           sidebarId: 'ContainersAndMiddleware',
           label: '容器&中间件',
         },
-
-        {
-          type: 'localeDropdown',
-          position: 'right',
-        },
       ],
     },
 
@@ -249,7 +244,16 @@ const config: Config = {
           customCss: ['./src/css/custom.css'],
         },
         sitemap: {
+          lastmod: 'date',
+          changefreq: 'weekly',
           priority: 0.5,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+          createSitemapItems: async (params) => {
+            const {defaultCreateSitemapItems, ...rest} = params;
+            const items = await defaultCreateSitemapItems(rest);
+            return items.filter((item) => !item.url.includes('/page/'));
+          },
         },
         gtag: {
           trackingID: 'G-S4SD5NXWXF',
@@ -320,17 +324,6 @@ const config: Config = {
     'https://cdn.jsdelivr.net/npm/misans@4.0.0/lib/Normal/MiSans-Normal.min.css',
     'https://cdn.jsdelivr.net/npm/misans@4.0.0/lib/Normal/MiSans-Semibold.min.css',
   ],
-
-  // 国际化
-  i18n: {
-    defaultLocale: 'zh-CN',
-    locales: ['en', 'zh-CN'],
-    localeConfigs: {
-      en: {
-        htmlLang: 'en-GB',
-      },
-    },
-  },
   onBrokenLinks: 'warn',
 }
 
