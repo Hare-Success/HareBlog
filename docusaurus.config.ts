@@ -318,7 +318,16 @@ const config: Config = {
       },
     },
   ],
-
+// 国际化
+  i18n: {
+    defaultLocale: 'zh-CN',
+    locales: ['en', 'zh-CN'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-GB',
+      },
+    },
+  },
   // 字体设置
   stylesheets: [
     'https://cdn.jsdelivr.net/npm/misans@4.0.0/lib/Normal/MiSans-Normal.min.css',
