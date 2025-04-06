@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://note.hare-success.cn/en/blog</id>
+    <title>Hare Blog</title>
+    <updated>2024-07-26T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://note.hare-success.cn/en/blog"/>
+    <subtitle>Hare Blog</subtitle>
+    <icon>https://note.hare-success.cn/en/img/HeadLogo.png</icon>
+    <rights>Copyright © 2025 Facebook, Inc.</rights>
+    <entry>
+        <title type="html"><![CDATA[矛盾中并煎焦虑]]></title>
+        <id>https://note.hare-success.cn/en/blog/2024/07/26/一直处于矛盾中</id>
+        <link href="https://note.hare-success.cn/en/blog/2024/07/26/一直处于矛盾中"/>
+        <updated>2024-07-26T00:00:00.000Z</updated>
+        <author>
+            <name>Hare野兔</name>
+            <email>w_16321632@163.com</email>
+            <uri>https://twitter.com/JoelMarcey</uri>
+        </author>
+        <category label="Release" term="Release"/>
+    </entry>
+</feed>

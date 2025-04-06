@@ -1,0 +1,22 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Hare Blog",
+    "home_page_url": "https://note.hare-success.cn/en/blog",
+    "description": "Hare Blog",
+    "items": [
+        {
+            "id": "https://note.hare-success.cn/en/blog/2024/07/26/一直处于矛盾中",
+            "content_html": "",
+            "url": "https://note.hare-success.cn/en/blog/2024/07/26/一直处于矛盾中",
+            "title": "矛盾中并煎焦虑",
+            "date_modified": "2024-07-26T00:00:00.000Z",
+            "author": {
+                "name": "Hare野兔",
+                "url": "https://twitter.com/JoelMarcey"
+            },
+            "tags": [
+                "Release"
+            ]
+        }
+    ]
+}
