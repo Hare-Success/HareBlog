@@ -114,13 +114,23 @@ const sidebars: SidebarsConfig = {
             type: 'category',
             label: '数据结构',
             link: {
-                type: 'generated-index',
-                description:
-                    "关于数据结构以及算法的学习，从书籍,视频,文章吸取精华!!",
-                keywords: ['数据结构',  '算法'],
+                type: 'doc',
+                id: 'DataStructuresAlgorithms/数据结构/dataIntroduction',
             },
             items: [
-                'DataStructuresAlgorithms/数据结构/线性结构/linearStructure',
+                {
+                    type: 'category',
+                    label: '线性结构',
+                    link: {
+                        type: 'doc',
+                        id: 'DataStructuresAlgorithms/数据结构/线性结构/linearStructure',
+                    },
+                    items: [
+                        'DataStructuresAlgorithms/数据结构/线性结构/sortStructure',
+                        'DataStructuresAlgorithms/数据结构/线性结构/nodeStructure'
+                    ]
+                },
+
             ]
         },
         {
