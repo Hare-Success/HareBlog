@@ -51,7 +51,7 @@ const config: Config = {
       logo: {
         alt: 'Hare',
         src: 'img/HareLogo.gif',
-        srcDark: 'img/HareLogo.gif',
+        srcDark: 'img/HareLogoWhite.gif',
       },
       hideOnScroll: true,
       items: [

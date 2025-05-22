@@ -127,7 +127,8 @@ const sidebars: SidebarsConfig = {
                     },
                     items: [
                         'DataStructuresAlgorithms/数据结构/线性结构/sortStructure',
-                        'DataStructuresAlgorithms/数据结构/线性结构/nodeStructure'
+                        'DataStructuresAlgorithms/数据结构/线性结构/nodeStructure',
+                        'DataStructuresAlgorithms/数据结构/线性结构/stackStructure'
                     ]
                 },
 
