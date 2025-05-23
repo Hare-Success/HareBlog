@@ -23,8 +23,6 @@ const social: Social = {
   x: '2',
   qq: '3',
   wx: '4',
-  // zhihu: 'https://www.zhihu.com/people/kuizuo',
-  // cloudmusic: 'https://music.163.com/#/user/home?id=1333010742',
   email: '',
   discord: '',
 }
