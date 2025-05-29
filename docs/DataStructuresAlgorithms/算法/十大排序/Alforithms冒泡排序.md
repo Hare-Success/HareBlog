@@ -2,7 +2,7 @@
 id: algorithmsBubbleSort
 title: 冒泡排序
 authors: Hare
-tags: [数据结构,算法,基础，排序]
+tags: [数据结构,算法,排序]
 ---
 
 import Tabs from '@theme/Tabs';

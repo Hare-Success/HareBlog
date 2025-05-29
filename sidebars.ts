@@ -138,10 +138,8 @@ const sidebars: SidebarsConfig = {
             type: 'category',
             label: '算法',
             link: {
-                type: 'generated-index',
-                description:
-                    "关于数据结构以及算法的学习，从书籍,视频,文章吸取精华!!",
-                keywords: ['数据结构', '算法'],
+                type: 'doc',
+                id: 'DataStructuresAlgorithms/算法/algorithmsIntroduction'
             },
             items: [
                 'DataStructuresAlgorithms/算法/algorithmsBinarySearch',
@@ -149,15 +147,13 @@ const sidebars: SidebarsConfig = {
                     type: 'category',
                     label: '十大排序',
                     link: {
-                        type: 'generated-index',
-                        description:
-                            "关于数据结构以及算法的学习，从书籍,视频,文章吸取精华!!",
-                        keywords: ['数据结构', '算法','排序'],
+                        type: 'doc',
+                        id: 'DataStructuresAlgorithms/算法/tenSortInfo'
                     },
                     items: [
                         'DataStructuresAlgorithms/算法/十大排序/algorithmsBubbleSort',
-                        'DataStructuresAlgorithms/算法/十大排序/algorithmsSelectSort'
-
+                        'DataStructuresAlgorithms/算法/十大排序/algorithmsSelectSort',
+                        'DataStructuresAlgorithms/算法/十大排序/algorithmsInsertSort'
                     ]
                 }
             ]
