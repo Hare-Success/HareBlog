@@ -153,7 +153,8 @@ const sidebars: SidebarsConfig = {
                     items: [
                         'DataStructuresAlgorithms/算法/十大排序/algorithmsBubbleSort',
                         'DataStructuresAlgorithms/算法/十大排序/algorithmsSelectSort',
-                        'DataStructuresAlgorithms/算法/十大排序/algorithmsInsertSort'
+                        'DataStructuresAlgorithms/算法/十大排序/algorithmsInsertSort',
+                        'DataStructuresAlgorithms/算法/十大排序/algorithmsShellSort'
                     ]
                 }
             ]
@@ -183,6 +184,28 @@ const sidebars: SidebarsConfig = {
                 }
             ]
         }
+    ],
+
+    // 自动化测试
+    Automation: [
+        'Automation/automationWre',
+        {
+            type: 'category',
+            label: 'selenium',
+            link: {
+                type: 'doc',
+                id: 'Automation/selenium/seleniumIntroduce',
+            },
+            items: [
+                {
+                    type: 'category',
+                    label: '元素定位法',
+                    items: [
+                        'Automation/selenium/元素定位法/ByElementId',
+                    ],
+                },
+            ],
+        },
     ]
 }
 

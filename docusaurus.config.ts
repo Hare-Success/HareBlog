@@ -83,6 +83,12 @@ const config: Config = {
           sidebarId: 'ContainersAndMiddleware',
           label: '容器&中间件',
         },
+        {
+          type: 'docSidebar',
+          position: 'right',
+          sidebarId: 'Automation',
+          label: '自动化测试',
+        }
       ],
     },
 
