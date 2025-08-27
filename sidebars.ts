@@ -191,6 +191,17 @@ const sidebars: SidebarsConfig = {
         'Automation/automationWre',
         {
             type: 'category',
+            label: 'jmeter',
+            link: {
+                type: 'doc',
+                id: 'Automation/selenium/seleniumIntroduce',
+            },
+            items: [
+                'Automation/jmeter/JmeterSSL',
+            ],
+        },
+        {
+            type: 'category',
             label: 'selenium',
             link: {
                 type: 'doc',
@@ -204,8 +215,10 @@ const sidebars: SidebarsConfig = {
                         'Automation/selenium/元素定位法/ByElementId',
                     ],
                 },
+                'Automation/selenium/Handle',
             ],
         },
+
     ]
 }
 
