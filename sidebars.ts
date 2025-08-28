@@ -194,10 +194,11 @@ const sidebars: SidebarsConfig = {
             label: 'jmeter',
             link: {
                 type: 'doc',
-                id: 'Automation/selenium/seleniumIntroduce',
+                id: 'Automation/jmeter/jmeterIntroduce',
             },
             items: [
                 'Automation/jmeter/JmeterSSL',
+                'Automation/jmeter/DirectMysql'
             ],
         },
         {
@@ -219,6 +220,9 @@ const sidebars: SidebarsConfig = {
             ],
         },
 
+    ],
+    Problem: [
+        'problem/problem',
     ]
 }
 

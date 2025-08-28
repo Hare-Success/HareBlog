@@ -79,6 +79,12 @@ const config: Config = {
         },
         {
           type: 'docSidebar',
+          label: '问题解决记录',
+          position: 'right',
+          sidebarId: 'Problem',
+        },
+        {
+          type: 'docSidebar',
           position: 'right',
           sidebarId: 'ContainersAndMiddleware',
           label: '容器&中间件',
