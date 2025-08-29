@@ -222,7 +222,7 @@ const sidebars: SidebarsConfig = {
 
     ],
     Problem: [
-        'problem/problem',
+        'problem/AlmaLinux',
     ]
 }
 
