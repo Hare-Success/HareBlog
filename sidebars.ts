@@ -198,7 +198,8 @@ const sidebars: SidebarsConfig = {
             },
             items: [
                 'Automation/jmeter/JmeterSSL',
-                'Automation/jmeter/DirectMysql'
+                'Automation/jmeter/DirectMysql',
+                'Automation/jmeter/ScriptRecording'
             ],
         },
         {
