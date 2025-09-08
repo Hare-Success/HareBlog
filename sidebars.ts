@@ -197,9 +197,30 @@ const sidebars: SidebarsConfig = {
                 id: 'Automation/jmeter/jmeterIntroduce',
             },
             items: [
-                'Automation/jmeter/JmeterSSL',
-                'Automation/jmeter/DirectMysql',
-                'Automation/jmeter/ScriptRecording'
+                {
+                    type: 'category',
+                    label: '简单层次',
+                    link: {
+                        type: 'doc',
+                        id: 'Automation/jmeter/jmeterIntroduce',
+                    },
+                    items: [
+                        'Automation/jmeter/简单层次/JmeterSSL',
+                        'Automation/jmeter/简单层次/DirectMysql',
+                        'Automation/jmeter/简单层次/ScriptRecording',
+                        {
+                            type: 'category',
+                            label: '断言',
+                            link: {
+                                type: 'doc',
+                                id: 'Automation/jmeter/简单层次/断言/Assertion',
+                            },
+                            items: [
+                                'Automation/jmeter/简单层次/JmeterSSL',
+                            ],
+                        },
+                    ],
+                },
             ],
         },
         {
