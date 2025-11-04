@@ -83,6 +83,31 @@ const sidebars: SidebarsConfig = {
                 },
             ],
         },
+        {
+            type: 'category',
+            label: 'ElasticSearch',
+            link: {
+                type: 'generated-index',
+                description:
+                    "关于ElasticSearch相关学习",
+                keywords: ['es'],
+            },
+            items: [
+                {
+                    type: 'category',
+                    label: 'ElasticSearch基础',
+                    link: {
+                        type: 'generated-index',
+                        description:
+                            "关于ElasticSearch相关学习",
+                        keywords: ['es'],
+                    },
+                    items: [
+                        'elasticSearch/elasticSearch基础/esIndex'
+                    ],
+                },
+            ],
+        },
     ],
     // docusaurus配置
     GoDataBlog: [
